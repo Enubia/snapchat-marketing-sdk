@@ -1,4 +1,4 @@
-# IMPORTANT
+# ❗IMPORTANT❗
 This project is still in development and won't work as of today (07.04.2020). If you want to contribute all you have to do is cloning this repository, set up ESLint and prettier, write your code, create a PR with the project owner as reviewer and a short description what was done/which feature was implemented. 
 Wait for approval. Done!
 
@@ -11,3 +11,13 @@ The whole kit is written in Typescript and thus already includes type definition
 ### Documentation
 
 Will be written down once development has reached a release state :D
+
+### Base Implementations: TODO
+
+ - AdAccounts	  ✔️
+ - Media				❌
+ - Creative			❌
+ - Campaigns		✔️
+ - AdSquads		  ✔️
+ - Ads					✔️
+
