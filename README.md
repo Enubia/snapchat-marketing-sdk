@@ -14,10 +14,11 @@ Will be written down once development has reached a release state :D
 
 ### Base Implementations: TODO
 
- - AdAccounts	  ✔️
- - Media				❌
- - Creative			❌
- - Campaigns		✔️
- - AdSquads		  ✔️
- - Ads					✔️
+ - [x] AdAccounts
+ - [ ] Media
+ - [ ] Creative
+ - [x] Campaigns
+ - [x] AdSquads
+ - [x] Ads
+
 
