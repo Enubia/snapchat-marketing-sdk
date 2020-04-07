@@ -21,7 +21,7 @@ export default class Ads {
 	}
 
 	public async createNewAd(config: ISCAds): Promise<ISCCreateOrUpdateAdResponse> {
-		if (!config.ad_squad_id) throw new Error('Must pass in an ad_squad_id Id!');
+		if (!config.ad_squad_id) throw new Error('Missing config!');
 
 		return sendRequest(
 			`${this.url.ads}/${config.ad_squad_id}/ads`,
@@ -35,7 +35,7 @@ export default class Ads {
 	}
 
 	public async update(config: ISCAds): Promise<ISCCreateOrUpdateAdResponse> {
-		if (!config.ad_squad_id) throw new Error('Must pass in an ad_squad_id Id!');
+		if (!config.ad_squad_id) throw new Error('Missing config!');
 
 		return sendRequest(
 			`${this.url.ads}/${config.ad_squad_id}/ads`,
@@ -49,7 +49,7 @@ export default class Ads {
 	}
 
 	public async getAllFromAdSquad(adSquadId: string): Promise<ISCCreateOrUpdateAdResponse> {
-		if (!adSquadId) throw new Error('Must pass in an ad_squad_id Id!');
+		if (!adSquadId) throw new Error('Missing adSquadId!');
 
 		return sendRequest(
 			`${this.url.ads}/${adSquadId}/ads`,
@@ -62,7 +62,7 @@ export default class Ads {
 	}
 
 	public async getAllFromAdAccount(adAccountId: string): Promise<ISCCreateOrUpdateAdResponse> {
-		if (!adAccountId) throw new Error('Must pass in an ad_squad_id Id!');
+		if (!adAccountId) throw new Error('Missing adAccountId!');
 
 		return sendRequest(
 			`${this.url.adAccount}${adAccountId}`,
@@ -75,7 +75,7 @@ export default class Ads {
 	}
 
 	public async getAdById(adId: string): Promise<ISCCreateOrUpdateAdResponse> {
-		if (!adId) throw new Error('Must pass in an ad_squad_id Id!');
+		if (!adId) throw new Error('Missing adId!');
 
 		return sendRequest(
 			`${this.url.adAccount}${adId}`,
@@ -88,7 +88,7 @@ export default class Ads {
 	}
 
 	public async deleteAd(adId: string): Promise<ISCDeleteAdResponse> {
-		if (!adId) throw new Error('Must pass in an ad_squad_id Id!');
+		if (!adId) throw new Error('Missing adId!');
 
 		return sendRequest(
 			`${this.url.adAccount}${adId}`,

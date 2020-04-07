@@ -14,7 +14,7 @@ export default class AdAccounts {
 	}
 
 	public async getAll(organizationId: string): Promise<ISCAdAccountResponse> {
-		if (!organizationId) throw new Error('Must pass in an Organization Account id!');
+		if (!organizationId) throw new Error('Missing organizationId!');
 
 		return sendRequest(
 			`${this.urls.allAdAccounts}/${organizationId}/adaccounts`,
@@ -27,7 +27,7 @@ export default class AdAccounts {
 	}
 
 	public async getById(accountId: string): Promise<ISCAdAccountResponse> {
-		if (!accountId) throw new Error('Must pass in an Ad Account id!');
+		if (!accountId) throw new Error('Missing accountId!');
 
 		return sendRequest(
 			`${this.urls.specificAdAccount}/${accountId}`,

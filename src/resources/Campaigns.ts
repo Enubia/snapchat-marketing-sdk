@@ -18,7 +18,7 @@ export default class Campaigns {
 	}
 
 	public async createNewCampaign(config: ISCCampaignConfig): Promise<ISCApiCampaignResponse> {
-		if (!config.ad_account_id) throw new Error('Must pass in an Ad Account Id!');
+		if (!config.ad_account_id) throw new Error('Missing config!');
 
 		const body = {
 			campaigns: [config]
@@ -33,7 +33,7 @@ export default class Campaigns {
 	}
 
 	public async getAll(adAccountId: string): Promise<ISCApiCampaignResponse> {
-		if (!adAccountId) throw new Error('Must pass in an Ad Account Id!');
+		if (!adAccountId) throw new Error('Missing adAccountId!');
 
 		return sendRequest(
 			`${this.urls.allCampaigns}/${adAccountId}/campaigns`,
@@ -44,7 +44,7 @@ export default class Campaigns {
 	}
 
 	public async updateCampaign(adAccountId: string): Promise<ISCApiCampaignResponse> {
-		if (!adAccountId) throw new Error('Must pass in an Ad Account Id!');
+		if (!adAccountId) throw new Error('Missing adAccountId!');
 
 		return sendRequest(
 			`${this.urls.allCampaigns}/${adAccountId}/campaigns`,
@@ -55,7 +55,7 @@ export default class Campaigns {
 	}
 
 	public async getById(campaignId: string): Promise<ISCApiCampaignResponse> {
-		if (!campaignId) throw new Error('Must pass in a Campaign Id!');
+		if (!campaignId) throw new Error('Missing campaignId!');
 
 		return sendRequest(
 			`${this.urls.specificCampaign}/${campaignId}`,
@@ -66,7 +66,7 @@ export default class Campaigns {
 	}
 
 	public async delete(campaignId: string): Promise<ISCDeleteCampaignResponses> {
-		if (!campaignId) throw new Error('Must pass in a Campaign Id!');
+		if (!campaignId) throw new Error('Missing campaignId!');
 
 		return sendRequest(
 			`${this.urls.specificCampaign}/${campaignId}`,

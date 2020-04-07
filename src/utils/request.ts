@@ -34,7 +34,9 @@ export const sendRequest = async (
 	snapChatOptions: ISCOptions,
 	oauthClient: OAuthClient
 ): Promise<any> => {
-	if (isTokenStale(snapChatOptions)) await refreshAccessToken(snapChatOptions, oauthClient);
+	if (isTokenStale(snapChatOptions)) {
+		await refreshAccessToken(snapChatOptions, oauthClient);
+	}
 
 	const requestOptions = { ...snapChatOptions.baseHttpOptions, ...request };
 	requestOptions.headers.Authorization = `Bearer ${snapChatOptions.accessToken}`;
