@@ -1,0 +1,55 @@
+{
+	"name": "snapchat-marketing-sdk",
+	"version": "1.0.0",
+	"description": "Another Snapchat business SDK for NodeJS",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"test": "mocha -r ts-node/register src/test/*.test.ts",
+		"build": "tsc",
+		"prepare": "npm run build",
+		"prepublishOnly": "npm run prepare"
+	},
+	"files": [
+		"dist"
+	],
+	"directories": {
+		"lib": "dist"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/LettuceKiing/snapchat-marketing-sdk.git"
+	},
+	"dependencies": {
+		"axios": "^0.19.2",
+		"simple-oauth2": "^3.3.0"
+	},
+	"devDependencies": {
+		"@hokify/eslint-config": "^0.2.12",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"@types/simple-oauth2": "^2.5.2",
+		"eslint": "^6.8.0",
+		"mocha": "^7.1.1",
+		"prettier": "^1.19.1",
+		"ts-node": "^8.8.2",
+		"typescript": "^3.8.3"
+	},
+	"keywords": [
+		"snapchat",
+		"node-snapschat",
+		"business-sdk",
+		"snapchat-business-sdk",
+		"snapchat-sdk",
+		"snapchat-marketing-sdk"
+	],
+	"author": "Marco Schuster",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/LettuceKiing/snapchat-marketing-sdk/issues"
+	},
+	"homepage": "https://github.com/LettuceKiing/snapchat-marketing-sdk#readme"
+}

@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "es2018",
+		"lib": ["es2018"],
+		"outDir": "dist",
+		"rootDir": "src",
+		"tsBuildInfoFile": ".tmp/tsbuildinfo",
+		"moduleResolution": "node",
+		"strict": true,
+		"noImplicitAny": false,
+		"removeComments": false,
+		"composite": true,
+		"strictPropertyInitialization": false,
+		"resolveJsonModule": true,
+		"sourceMap": true,
+		"isolatedModules": false,
+		"declaration": true
+	}
+}
