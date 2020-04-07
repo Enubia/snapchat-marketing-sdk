@@ -25,7 +25,7 @@
 	},
 	"dependencies": {
 		"axios": "^0.19.2",
-		"simple-oauth2": "^3.3.0"
+		"simple-oauth2": "^3.4.0"
 	},
 	"devDependencies": {
 		"@hokify/eslint-config": "^0.2.12",
