@@ -20,5 +20,6 @@ Will be written down once development has reached a release state :D
  - [x] Campaigns
  - [x] AdSquads
  - [x] Ads
+ - [ ] Tests
 
 
