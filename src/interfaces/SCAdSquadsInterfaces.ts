@@ -125,8 +125,8 @@ export interface ISCAdSquadRequestResponse {
 		sub_request_status: string;
 		adsquad: {
 			id: string;
-			updated_at: string;
-			created_at: string;
+			updated_at: Date;
+			created_at: Date;
 			name: string;
 			status: string;
 			campaign_id: string;
@@ -195,8 +195,8 @@ export interface ISCUpdateAdSquadResponse {
 		status: string;
 		adsquad: {
 			id: string;
-			updated_at: string;
-			created_at: string;
+			updated_at: Date;
+			created_at: Date;
 			name: string;
 			campaign_id: string;
 			type: string;

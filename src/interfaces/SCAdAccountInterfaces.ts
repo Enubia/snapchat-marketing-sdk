@@ -5,8 +5,8 @@ export interface ISCAdAccountResponse {
 		sub_request_status: string;
 		adaccount: {
 			id: string;
-			updated_at: string;
-			created_at: string;
+			updated_at: Date;
+			created_at: Date;
 			name: string;
 			type: string;
 			status: string;

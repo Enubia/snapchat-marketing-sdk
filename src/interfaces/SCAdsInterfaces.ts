@@ -25,8 +25,8 @@ export interface ISCCreateOrUpdateAdResponse {
 		sub_request_status: string;
 		ad: {
 			id: string;
-			updated_at: string;
-			created_at: string;
+			updated_at: Date;
+			created_at: Date;
 			name: string;
 			ad_squad_id: string;
 			creative_id: string;

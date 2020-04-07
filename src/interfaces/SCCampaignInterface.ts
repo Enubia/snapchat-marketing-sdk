@@ -12,8 +12,8 @@ export interface ISCApiCampaignResponse {
 		sub_request_status: string;
 		campaign: {
 			id: string;
-			updated_at: string;
-			created_at: string;
+			updated_at: Date;
+			created_at: Date;
 			name: string;
 			ad_account_id: string;
 			status: string;
