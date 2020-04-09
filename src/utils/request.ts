@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { OAuthClient } from 'simple-oauth2';
-import { ISCRequestParams, ISCOptions } from '../interfaces/SCConfigInterfaces';
+import { ISCOptions, ISCRequestParams } from '../interfaces/SCConfigInterfaces';
 
 export const isTokenStale = (options: ISCOptions): boolean => {
 	return (
@@ -42,8 +42,14 @@ export const sendRequest = async (
 	requestOptions.headers.Authorization = `Bearer ${snapChatOptions.accessToken}`;
 
 	try {
-		return await axios(url, requestOptions);
+		return await axios(url, requestOptions).then(result => result.data);
 	} catch (err) {
 		throw new Error(`Error during request: ${err}`);
 	}
+};
+
+export const getFilesizeInBytes = (base64: string): number => {
+	const base64Length = base64.length - (base64.indexOf(',') + 1);
+	const padding = base64.charAt(base64.length - 2) === '=' ? 2 : 1;
+	return base64Length * 0.75 - padding;
 };

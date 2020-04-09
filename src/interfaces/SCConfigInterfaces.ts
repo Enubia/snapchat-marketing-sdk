@@ -1,4 +1,4 @@
-import { Token } from "simple-oauth2";
+import { Token } from 'simple-oauth2';
 
 export interface ISCConfig {
 	id: string;

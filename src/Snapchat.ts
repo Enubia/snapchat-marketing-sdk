@@ -3,6 +3,7 @@ import AdAccounts from './resources/AdAccounts';
 import AdSquads from './resources/AdSquads';
 import Campaigns from './resources/Campaigns';
 import Ads from './resources/Ads';
+import Media from './resources/Media';
 import { ISCConfig, ISCOptions } from './interfaces/SCConfigInterfaces';
 
 export default class Snapchat {
@@ -12,11 +13,13 @@ export default class Snapchat {
 
 	public campaigns: Campaigns;
 
+	public ads: Ads;
+
+	public media: Media;
+
 	private readonly options: ISCOptions;
 
 	private readonly oauth2: OAuthClient;
-
-	private ads: Ads;
 
 	constructor(config: ISCConfig) {
 		this.options = {
@@ -55,6 +58,7 @@ export default class Snapchat {
 		this.adSquads = new AdSquads(this.options, this.oauth2);
 		this.campaigns = new Campaigns(this.options, this.oauth2);
 		this.ads = new Ads(this.options, this.oauth2);
+		this.media = new Media(this.options, this.oauth2);
 	}
 
 	/**

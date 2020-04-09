@@ -1,5 +1,7 @@
 export interface ISCMediaConfig {
 	ad_account_id: string;
+	name: string;
+	type: string;
 }
 
 export interface ISCMediaUploadChunkedINIT {
@@ -35,7 +37,7 @@ export interface ISCMediaUploadResponse {
 	request_id: string;
 }
 
-export interface ISCApiAllMediaResponse {
+export interface ISCApiMediaResponse {
 	request_status: string;
 	request_id: string;
 	media: {

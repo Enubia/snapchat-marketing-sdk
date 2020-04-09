@@ -17,7 +17,13 @@ export default class Campaigns {
 		};
 	}
 
-	public async createNewCampaign(config: ISCCampaignConfig): Promise<ISCApiCampaignResponse> {
+	/**
+	 * Creates a new campaign
+	 *
+	 * @param {ISCCampaignConfig} config
+	 * @returns {Promise<ISCApiCampaignResponse>}
+	 */
+	public async create(config: ISCCampaignConfig): Promise<ISCApiCampaignResponse> {
 		if (!config.ad_account_id) throw new Error('Missing config!');
 
 		const body = {
@@ -32,6 +38,12 @@ export default class Campaigns {
 		);
 	}
 
+	/**
+	 * Get all campaigns associated to the given account
+	 *
+	 * @param {string} adAccountId
+	 * @returns {Promise<ISCApiCampaignResponse>}
+	 */
 	public async getAll(adAccountId: string): Promise<ISCApiCampaignResponse> {
 		if (!adAccountId) throw new Error('Missing adAccountId!');
 
@@ -43,6 +55,13 @@ export default class Campaigns {
 		);
 	}
 
+	// TODO: fix https://developers.snapchat.com/api/docs/#update-a-campaign
+	/**
+	 * Updates a specific Campaign
+	 *
+	 * @param {string} adAccountId
+	 * @returns {Promise<ISCApiCampaignResponse>}
+	 */
 	public async updateCampaign(adAccountId: string): Promise<ISCApiCampaignResponse> {
 		if (!adAccountId) throw new Error('Missing adAccountId!');
 
