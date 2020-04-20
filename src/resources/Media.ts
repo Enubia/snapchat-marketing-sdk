@@ -18,6 +18,30 @@ export default class Media {
     };
   }
 
+  private async uploadFile(
+    mediaId: string,
+    filename: string,
+    file: Buffer,
+  ): Promise<ISCMediaUploadResponse> {
+    const form = new FormData();
+
+    form.append('file', Buffer.from(file), {
+      filename,
+    });
+    const body = {
+      data: form,
+    };
+
+    this.options.baseHttpOptions.headers['Content-Type'] = 'multipart/formdata';
+
+    return sendRequest(
+      `${this.urls.allMedia}/${mediaId}/upload`,
+      { method: 'POST', body },
+      this.options,
+      this.oauth2,
+    );
+  }
+
   /**
    * @param {ISCMediaConfig} config
    * @returns {Promise<ISCApiMediaResponse>}
@@ -62,22 +86,7 @@ export default class Media {
       throw new Error(`File ${filename} is to large for upload, max 30MB!`);
     }
 
-    const form = new FormData();
-
-    const body = {
-      data: form.append('file', Buffer.from(video), {
-        filename,
-      }),
-    };
-
-    this.options.baseHttpOptions.headers['Content-Type'] = 'multipart/formdata';
-
-    return sendRequest(
-      `${this.urls.allMedia}/${mediaId}/upload`,
-      { method: 'POST', body },
-      this.options,
-      this.oauth2,
-    );
+    return this.uploadFile(mediaId, filename, video);
   }
 
   /**
@@ -102,22 +111,7 @@ export default class Media {
       throw new Error(`File ${filename} is to large for upload, max 5MB!`);
     }
 
-    const form = new FormData();
-
-    const body = {
-      data: form.append('file', Buffer.from(file), {
-        filename,
-      }),
-    };
-
-    this.options.baseHttpOptions.headers['Content-Type'] = 'multipart/formdata';
-
-    return sendRequest(
-      `${this.urls.allMedia}/${mediaId}/upload`,
-      { method: 'POST', body },
-      this.options,
-      this.oauth2,
-    );
+    return this.uploadFile(mediaId, filename, file);
   }
 
   // TODO: implement
