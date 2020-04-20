@@ -33,7 +33,7 @@ export default class Campaigns {
       `${this.urls.allCampaigns}/${config.ad_account_id}/campaigns`,
       { method: 'POST', body },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -48,7 +48,7 @@ export default class Campaigns {
       `${this.urls.allCampaigns}/${adAccountId}/campaigns`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -59,7 +59,7 @@ export default class Campaigns {
    */
   public async updateCampaign(
     adAccountId: string,
-    campaigns: IUpdateCampaignOptions
+    campaigns: IUpdateCampaignOptions,
   ): Promise<ISCApiCampaignResponse> {
     if (!adAccountId) throw new Error('Missing adAccountId!');
 
@@ -71,7 +71,7 @@ export default class Campaigns {
       `${this.urls.allCampaigns}/${adAccountId}/campaigns`,
       { method: 'PUT', body },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -86,7 +86,7 @@ export default class Campaigns {
       `${this.urls.specificCampaign}/${campaignId}`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -101,7 +101,7 @@ export default class Campaigns {
       `${this.urls.specificCampaign}/${campaignId}`,
       { method: 'DELETE' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 }

@@ -34,7 +34,7 @@ export default class Ads {
         body: { ...config },
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -52,7 +52,7 @@ export default class Ads {
         body: { ...config },
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -69,7 +69,7 @@ export default class Ads {
         method: 'GET',
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -86,7 +86,7 @@ export default class Ads {
         method: 'GET',
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -103,7 +103,7 @@ export default class Ads {
         method: 'GET',
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -120,7 +120,7 @@ export default class Ads {
         method: 'DELETE',
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 }

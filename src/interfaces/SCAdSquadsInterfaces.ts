@@ -112,7 +112,7 @@ export interface ISCAdSquadsConfig {
     geos: [
       {
         country_code: string;
-      }
+      },
     ];
   };
   start_time: Date;
@@ -135,7 +135,7 @@ export interface ISCAdSquadRequestResponse {
         geos?: [
           {
             country_code: string;
-          }
+          },
         ];
       };
       placement: string;

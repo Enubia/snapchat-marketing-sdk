@@ -39,7 +39,7 @@ export default class AdSquads {
         body: config,
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -57,7 +57,7 @@ export default class AdSquads {
         body: config,
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -72,7 +72,7 @@ export default class AdSquads {
       `${this.urls.allAdSquadsCampaign}/${campaignId}/adsquads`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -87,7 +87,7 @@ export default class AdSquads {
       `${this.urls.allAdSquadsAdAccount}/${adAccountId}/adsquads`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -102,7 +102,7 @@ export default class AdSquads {
       `${this.urls.specificAdSquad}/${adSquadId}`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -117,7 +117,7 @@ export default class AdSquads {
       `${this.urls.specificAdSquad}/${adSquadId}`,
       { method: 'DELETE' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 }

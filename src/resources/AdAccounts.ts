@@ -27,7 +27,7 @@ export default class AdAccounts {
         method: 'GET',
       },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -42,7 +42,7 @@ export default class AdAccounts {
       `${this.urls.specificAdAccount}/${accountId}`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 }

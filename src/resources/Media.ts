@@ -39,7 +39,7 @@ export default class Media {
       `${this.urls.allMedia}/${config.ad_account_id}/media`,
       { method: 'POST', body },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -54,7 +54,7 @@ export default class Media {
   public async uploadVideo(
     mediaId: string,
     filename: string,
-    video: Buffer
+    video: Buffer,
   ): Promise<ISCMediaUploadResponse> {
     if (!mediaId) throw new Error('Missing mediaId!');
 
@@ -76,7 +76,7 @@ export default class Media {
       `${this.urls.allMedia}/${mediaId}/upload`,
       { method: 'POST', body },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -94,7 +94,7 @@ export default class Media {
   public async uploadImage(
     mediaId: string,
     filename: string,
-    file: Buffer
+    file: Buffer,
   ): Promise<ISCMediaUploadResponse> {
     if (!mediaId) throw new Error('Missing mediaId!');
 
@@ -116,7 +116,7 @@ export default class Media {
       `${this.urls.allMedia}/${mediaId}/upload`,
       { method: 'POST', body },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -140,7 +140,7 @@ export default class Media {
       `${this.urls.allMedia}/${adAccountId}/media`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
@@ -155,7 +155,7 @@ export default class Media {
       `${this.urls.specificMedia}/${mediaId}`,
       { method: 'GET' },
       this.options,
-      this.oauth2
+      this.oauth2,
     );
   }
 
