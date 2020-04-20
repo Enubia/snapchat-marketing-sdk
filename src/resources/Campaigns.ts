@@ -4,7 +4,8 @@ import { sendRequest } from '../utils/request';
 import {
 	ISCCampaignConfig,
 	ISCApiCampaignResponse,
-	ISCDeleteCampaignResponses
+	ISCDeleteCampaignResponses,
+	IUpdateCampaignOptions
 } from '../interfaces/SCCampaignInterface';
 
 export default class Campaigns {
@@ -51,17 +52,24 @@ export default class Campaigns {
 		);
 	}
 
-	// TODO: fix https://developers.snapchat.com/api/docs/#update-a-campaign
 	/**
 	 * @param {string} adAccountId
+	 * @param {IUpdateCampaignOptions} campaigns
 	 * @returns {Promise<ISCApiCampaignResponse>}
 	 */
-	public async updateCampaign(adAccountId: string): Promise<ISCApiCampaignResponse> {
+	public async updateCampaign(
+		adAccountId: string,
+		campaigns: IUpdateCampaignOptions
+	): Promise<ISCApiCampaignResponse> {
 		if (!adAccountId) throw new Error('Missing adAccountId!');
+
+		const body = {
+			campaigns
+		};
 
 		return sendRequest(
 			`${this.urls.allCampaigns}/${adAccountId}/campaigns`,
-			{ method: 'PUT' },
+			{ method: 'PUT', body },
 			this.options,
 			this.oauth2
 		);

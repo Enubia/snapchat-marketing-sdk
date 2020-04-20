@@ -1,7 +1,7 @@
 import { OAuthClient } from 'simple-oauth2';
 import * as FormData from 'form-data';
 import { ISCOptions } from '../interfaces/SCConfigInterfaces';
-import { getFilesizeInBytes, sendRequest } from '../utils/request';
+import { getFileSizeInBytes, sendRequest } from '../utils/request';
 import {
 	ISCMediaConfig,
 	ISCApiMediaResponse,
@@ -11,14 +11,11 @@ import {
 export default class Media {
 	private urls: { allMedia: string; specificMedia: string };
 
-	private form: FormData;
-
 	constructor(private options: ISCOptions, private oauth2: OAuthClient) {
 		this.urls = {
 			allMedia: 'https://adsapi.snapchat.com/v1/adaccounts',
 			specificMedia: 'https://adsapi.snapchat.com/v1/media'
 		};
-		this.form = new FormData();
 	}
 
 	/**
@@ -61,12 +58,14 @@ export default class Media {
 	): Promise<ISCMediaUploadResponse> {
 		if (!mediaId) throw new Error('Missing mediaId!');
 
-		if (getFilesizeInBytes(video.toString('base64')) > 30000000) {
+		if (getFileSizeInBytes(video.toString('base64')) > 30000000) {
 			throw new Error(`File ${filename} is to large for upload, max 30MB!`);
 		}
 
+		const form = new FormData();
+
 		const body = {
-			data: this.form.append('file', Buffer.from(video), {
+			data: form.append('file', Buffer.from(video), {
 				filename
 			})
 		};
@@ -99,12 +98,14 @@ export default class Media {
 	): Promise<ISCMediaUploadResponse> {
 		if (!mediaId) throw new Error('Missing mediaId!');
 
-		if (getFilesizeInBytes(file.toString('base64')) > 5000000) {
+		if (getFileSizeInBytes(file.toString('base64')) > 5000000) {
 			throw new Error(`File ${filename} is to large for upload, max 5MB!`);
 		}
 
+		const form = new FormData();
+
 		const body = {
-			data: this.form.append('file', Buffer.from(file), {
+			data: form.append('file', Buffer.from(file), {
 				filename
 			})
 		};

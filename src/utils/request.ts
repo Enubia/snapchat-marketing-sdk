@@ -48,7 +48,7 @@ export const sendRequest = async (
 	}
 };
 
-export const getFilesizeInBytes = (base64: string): number => {
+export const getFileSizeInBytes = (base64: string): number => {
 	const base64Length = base64.length - (base64.indexOf(',') + 1);
 	const padding = base64.charAt(base64.length - 2) === '=' ? 2 : 1;
 	return base64Length * 0.75 - padding;

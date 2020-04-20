@@ -27,3 +27,16 @@ export interface ISCDeleteCampaignResponses {
 	request_id: string;
 	campaigns: [];
 }
+
+export interface IUpdateCampaignOptions {
+	campaigns: {
+		name: string;
+		ad_account_id?: string;
+		status: 'ACTIVE' | 'PAUSED';
+		start_time?: Date;
+		end_time?: Date;
+		id?: string;
+		daily_budget_micro?: number;
+		lifetime_spend_cap_micro?: number;
+	}[];
+}
