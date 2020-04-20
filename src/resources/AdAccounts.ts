@@ -13,6 +13,11 @@ export default class AdAccounts {
 		};
 	}
 
+	/**
+	 * Get all ad accounts registered with the given organization id.
+	 * @param  {string} organizationId
+	 * @returns Promise
+	 */
 	public async getAll(organizationId: string): Promise<ISCAdAccountResponse> {
 		if (!organizationId) throw new Error('Missing organizationId!');
 
@@ -26,6 +31,10 @@ export default class AdAccounts {
 		);
 	}
 
+	/**
+	 * @param  {string} accountId
+	 * @returns Promise
+	 */
 	public async getById(accountId: string): Promise<ISCAdAccountResponse> {
 		if (!accountId) throw new Error('Missing accountId!');
 

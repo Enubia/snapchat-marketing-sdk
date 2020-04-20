@@ -18,8 +18,6 @@ export default class Campaigns {
 	}
 
 	/**
-	 * Creates a new campaign
-	 *
 	 * @param {ISCCampaignConfig} config
 	 * @returns {Promise<ISCApiCampaignResponse>}
 	 */
@@ -39,8 +37,6 @@ export default class Campaigns {
 	}
 
 	/**
-	 * Get all campaigns associated to the given account
-	 *
 	 * @param {string} adAccountId
 	 * @returns {Promise<ISCApiCampaignResponse>}
 	 */
@@ -57,8 +53,6 @@ export default class Campaigns {
 
 	// TODO: fix https://developers.snapchat.com/api/docs/#update-a-campaign
 	/**
-	 * Updates a specific Campaign
-	 *
 	 * @param {string} adAccountId
 	 * @returns {Promise<ISCApiCampaignResponse>}
 	 */
@@ -73,6 +67,10 @@ export default class Campaigns {
 		);
 	}
 
+	/**
+	 * @param {string} campaignId
+	 * @returns {Promise<ISCApiCampaignResponse>}
+	 */
 	public async getById(campaignId: string): Promise<ISCApiCampaignResponse> {
 		if (!campaignId) throw new Error('Missing campaignId!');
 
@@ -84,6 +82,10 @@ export default class Campaigns {
 		);
 	}
 
+	/**
+	 * @param {string} campaignId
+	 * @returns {Promise<ISCDeleteCampaignResponses>}
+	 */
 	public async delete(campaignId: string): Promise<ISCDeleteCampaignResponses> {
 		if (!campaignId) throw new Error('Missing campaignId!');
 

@@ -22,8 +22,6 @@ export default class Media {
 	}
 
 	/**
-	 * Creates a new Media
-	 *
 	 * @param {ISCMediaConfig} config
 	 * @returns {Promise<ISCApiMediaResponse>}
 	 */
@@ -131,8 +129,6 @@ export default class Media {
 	public async uploadLargeFinalize() {}
 
 	/**
-	 * This endpoint retrieves all media associated with an ad account.
-	 *
 	 * @param {string} adAccountId
 	 * @returns {Promise<ISCApiMediaResponse>}
 	 */
@@ -148,8 +144,6 @@ export default class Media {
 	}
 
 	/**
-	 * This endpoint retrieves a specific media.
-	 *
 	 * @param {string} mediaId
 	 * @returns {Promise<ISCApiMediaResponse>}
 	 */

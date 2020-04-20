@@ -20,6 +20,10 @@ export default class Ads {
 		};
 	}
 
+	/**
+	 * @param  {ISCAds} config
+	 * @returns Promise
+	 */
 	public async createNewAd(config: ISCAds): Promise<ISCCreateOrUpdateAdResponse> {
 		if (!config.ad_squad_id) throw new Error('Missing config!');
 
@@ -34,6 +38,10 @@ export default class Ads {
 		);
 	}
 
+	/**
+	 * @param  {ISCAds} config
+	 * @returns Promise
+	 */
 	public async update(config: ISCAds): Promise<ISCCreateOrUpdateAdResponse> {
 		if (!config.ad_squad_id) throw new Error('Missing config!');
 
@@ -48,6 +56,10 @@ export default class Ads {
 		);
 	}
 
+	/**
+	 * @param  {string} adSquadId
+	 * @returns Promise
+	 */
 	public async getAllFromAdSquad(adSquadId: string): Promise<ISCCreateOrUpdateAdResponse> {
 		if (!adSquadId) throw new Error('Missing adSquadId!');
 
@@ -61,6 +73,10 @@ export default class Ads {
 		);
 	}
 
+	/**
+	 * @param  {string} adAccountId
+	 * @returns Promise
+	 */
 	public async getAllFromAdAccount(adAccountId: string): Promise<ISCCreateOrUpdateAdResponse> {
 		if (!adAccountId) throw new Error('Missing adAccountId!');
 
@@ -74,6 +90,10 @@ export default class Ads {
 		);
 	}
 
+	/**
+	 * @param  {string} adId
+	 * @returns Promise
+	 */
 	public async getAdById(adId: string): Promise<ISCCreateOrUpdateAdResponse> {
 		if (!adId) throw new Error('Missing adId!');
 
@@ -87,6 +107,10 @@ export default class Ads {
 		);
 	}
 
+	/**
+	 * @param  {string} adId
+	 * @returns Promise
+	 */
 	public async deleteAd(adId: string): Promise<ISCDeleteAdResponse> {
 		if (!adId) throw new Error('Missing adId!');
 

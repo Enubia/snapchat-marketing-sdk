@@ -24,6 +24,11 @@ export default class AdSquads {
 		};
 	}
 
+	/**
+	 * Creates a new ad squad.
+	 * @param {ISCAdSquadsConfig} config
+	 * @returns {Promise<ISCAdSquadRequestResponse>}
+	 */
 	public async createNewAdSquad(config: ISCAdSquadsConfig): Promise<ISCAdSquadRequestResponse> {
 		if (!config.campaign_id) throw new Error('Must pass in an Campaign Id!');
 
@@ -38,6 +43,10 @@ export default class AdSquads {
 		);
 	}
 
+	/**
+	 * @param {ISCUpdateAdSquadRequest} config
+	 * @returns {Promise<ISCUpdateAdSquadResponse>}
+	 */
 	public async updateAdSquad(config: ISCUpdateAdSquadRequest): Promise<ISCUpdateAdSquadResponse> {
 		if (!config) throw new Error('Missing config!');
 
@@ -52,6 +61,10 @@ export default class AdSquads {
 		);
 	}
 
+	/**
+	 * @param {string} campaignId
+	 * @returns {Promise<ISCAdSquadRequestResponse>}
+	 */
 	public async getAll(campaignId: string): Promise<ISCAdSquadRequestResponse> {
 		if (!campaignId) throw new Error('Missing campaignId!');
 
@@ -63,6 +76,10 @@ export default class AdSquads {
 		);
 	}
 
+	/**
+	 * @param {string} adAccountId
+	 * @returns {Promise<ISCAdSquadRequestResponse>}
+	 */
 	public async getAllByAccountId(adAccountId: string): Promise<ISCAdSquadRequestResponse> {
 		if (!adAccountId) throw new Error('Missing adAccountId!');
 
@@ -74,6 +91,10 @@ export default class AdSquads {
 		);
 	}
 
+	/**
+	 * @param {string} adSquadId
+	 * @returns {Promise<ISCAdSquadRequestResponse>}
+	 */
 	public async getById(adSquadId: string): Promise<ISCAdSquadRequestResponse> {
 		if (!adSquadId) throw new Error('Missing adSquadId!');
 
@@ -85,6 +106,10 @@ export default class AdSquads {
 		);
 	}
 
+	/**
+	 * @param {string} adSquadId
+	 * @returns {Promise<ISCAdSquadDeleteResponse>}
+	 */
 	public async delete(adSquadId: string): Promise<ISCAdSquadDeleteResponse> {
 		if (!adSquadId) throw new Error('Missing adSquadId!');
 

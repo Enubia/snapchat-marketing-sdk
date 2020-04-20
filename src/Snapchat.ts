@@ -63,17 +63,18 @@ export default class Snapchat {
 
 	/**
 	 * Get the authorization url from the given scope.
-	 *
-	 * @param scope
-	 * */
-	public getAuthorizeUrl = (scope: string): string =>
-		`${this.options.urls.authorize}&scope${scope}`;
+	 * @param  {string} scope
+	 * @returns string
+	 */
+	public getAuthorizeUrl(scope: string): string {
+		return `${this.options.urls.authorize}&scope${scope}`;
+	}
 
 	/**
 	 * Authorize this session and set tokens + expiration time.
-	 *
-	 * @param authorizationCode
-	 * */
+	 * @param  {string} authorizationCode
+	 * @returns Promise
+	 */
 	public async authorize(authorizationCode: string): Promise<Token> {
 		const tokenConfig = {
 			code: authorizationCode,
