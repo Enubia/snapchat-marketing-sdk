@@ -30,7 +30,7 @@
 		"form-data": "^3.0.0"
 	},
 	"devDependencies": {
-		"@hokify/eslint-config": "^0.4.6",
+		"@hokify/eslint-config": "^0.4.8",
 		"@types/mocha": "^7.0.2",
 		"@types/node": "^13.13.4",
 		"@types/simple-oauth2": "^2.5.2",
