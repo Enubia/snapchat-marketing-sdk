@@ -43,5 +43,5 @@ export interface ISCOptions {
 
 export interface ISCRequestParams {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
-  body?: Record<string, unknown>;
+  body?: unknown;
 }

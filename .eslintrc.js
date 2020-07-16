@@ -5,7 +5,7 @@ module.exports = {
 		project: './tsconfig.eslint.json'
 	},
 	rules: {
-		'@typescript-eslint/camelcase': 0,
-		'@typescript-eslint/interface-name-prefix': 0
+		'@typescript-eslint/no-explicit-any': 0,
+		'@typescript-eslint/no-unused-vars': 0
 	},
 };
