@@ -5,20 +5,9 @@ export interface ISCMediaConfig {
 }
 
 export interface ISCMediaUploadChunkedINIT {
-  action: string;
-  file_name: string;
-  file_size: number;
-  number_of_parts: string;
-}
-
-export interface ISCMediaUploadChunkedADD {
-  file: Buffer;
-  part_number: number;
-  upload_id: number;
-}
-
-export interface ISCMediaUploadChunkedFINALIZE {
-  upload_id: number;
+  add_path: string;
+  upload_id: string;
+  finalize_path: string;
 }
 
 export interface ISCMediaUploadResponse {

@@ -17,9 +17,9 @@ export default class Snapchat {
 
   public media: Media;
 
-  private readonly options: ISCOptions;
+  private oauth2: OAuthClient;
 
-  private readonly oauth2: OAuthClient;
+  private readonly options: ISCOptions;
 
   constructor(config: ISCConfig) {
     this.options = {
@@ -53,6 +53,9 @@ export default class Snapchat {
         me: 'https://adsapi.snapchat.com/v1/me',
       },
     };
+  }
+
+  public init(): void {
     this.oauth2 = create(this.options.credentials);
     this.addAccounts = new AdAccounts(this.options, this.oauth2);
     this.adSquads = new AdSquads(this.options, this.oauth2);
@@ -94,5 +97,9 @@ export default class Snapchat {
     } catch (err) {
       throw new Error(`Error while fetching tokenData: ${err}`);
     }
+  }
+
+  get config(): ISCOptions {
+    return this.options;
   }
 }

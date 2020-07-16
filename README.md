@@ -15,7 +15,7 @@ Will be written down once development has reached a release state :D
 ### 📝 TODO
 
  - [x] AdAccounts
- - [ ] Media
+ - [x] Media
  - [ ] Creative
  - [x] Campaigns
  - [x] AdSquads

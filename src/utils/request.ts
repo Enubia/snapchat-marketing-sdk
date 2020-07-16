@@ -18,12 +18,12 @@ export const refreshAccessToken = async (
 
   await accessToken
     .refresh()
-    .then(tokenData => {
+    .then((tokenData) => {
       options.accessToken = tokenData.token.access_token;
       options.accessTokenLastSet = Date.now();
       options.tokenExpiration = (new Date().getSeconds() + tokenData.token.expires_in) * 1000;
     })
-    .catch(err => {
+    .catch((err) => {
       throw new Error(`Error refreshing access token: ${err}`);
     });
 };
@@ -33,6 +33,7 @@ export const sendRequest = async (
   request: ISCRequestParams,
   snapChatOptions: ISCOptions,
   oauthClient: OAuthClient,
+  contentType?: string,
 ): Promise<any> => {
   if (isTokenStale(snapChatOptions)) {
     await refreshAccessToken(snapChatOptions, oauthClient);
@@ -41,10 +42,14 @@ export const sendRequest = async (
   const requestOptions = { ...snapChatOptions.baseHttpOptions, ...request };
   requestOptions.headers.Authorization = `Bearer ${snapChatOptions.accessToken}`;
 
+  if (contentType) {
+    requestOptions.headers['Content-Type'] = contentType;
+  }
+
   try {
-    return await axios(url, requestOptions).then(result => result.data);
-  } catch (err) {
-    throw new Error(`Error during request: ${err}`);
+    return await axios(url, requestOptions).then((result) => result.data);
+  } catch (error) {
+    throw new Error(`Error during request: ${error}`);
   }
 };
 
