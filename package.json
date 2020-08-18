@@ -36,7 +36,7 @@
 		"@types/simple-oauth2": "^4.1.0",
 		"eslint": "^7.4.0",
 		"husky": "^4.2.5",
-		"mocha": "^8.1.0",
+		"mocha": "^8.1.1",
 		"prettier": "^2.0.5",
 		"ts-node": "^8.10.2",
 		"typescript": "^3.9.7"
