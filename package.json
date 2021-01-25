@@ -32,7 +32,7 @@
 	"devDependencies": {
 		"@hokify/eslint-config": "^0.4.32",
 		"@types/mocha": "^8.2.0",
-		"@types/node": "^14.14.20",
+		"@types/node": "^14.14.22",
 		"@types/simple-oauth2": "^4.1.0",
 		"eslint": "^7.4.0",
 		"husky": "^4.3.7",
